@@ -1,0 +1,49 @@
+---
+layout: default
+---
+<script type="text/javascript">
+  iip_enabled = 1;
+  var images = "static/iip/{{ page.iip_path }}/";
+  var navImage = "{{ page.iip_thumb}}";
+  var credit = "{{ page.iip_credit }}";
+  var imgW = "{{ page.iip_width }}";
+  var imgH = "{{ page.iip_height }}";
+</script>
+
+<div id="page">
+  <div class="wide-col" style="width: {{ page.iip_left_col }}">
+    <p><img class="alignnone size-full" style="width: {{ page.iip_left_col }}"
+    src="{{ page.iip_image }}" alt="{{ page.title }}"></p>
+    <div class="box-hover">
+        <div class="hover-bg"></div>
+        <div class="instr"></div>
+    </div>
+  </div>
+
+  <div id="sidebar" class="widget-area narrow-col">
+    <h3>{{ page.title}}</h3>
+    <br class="clearfix" />
+    {{ content }}
+
+    <br class="clearfix" />
+    <br class="clearfix" />
+
+    <ul class="menu" id="controls">
+      <li><a href="/"><div class='prev-arrow'></div></a></li>
+      <li><a href="/"><div class='next-arrow'></div></a></li>
+    </ul>
+
+    <div class="sharing">
+      <div class="fbLink"></div>
+      <div class="twLink"></div>
+    </div>
+
+    <br class="clearfix" />
+    <br class="clearfix" />
+
+    <p>{% for category in page.categories %}
+      <a href="/{{ category}}">{{ category }}</a>
+    {% endfor %}
+    </p>
+  </div>
+</div>
