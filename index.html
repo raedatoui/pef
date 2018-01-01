@@ -8,7 +8,7 @@ layout: default
     {% assign sorted_posts = site.artworks | sort:"display_order" %}
     {% for post in sorted_posts %}
       <div class="box" data-order="{{ post.display_order }}">
-        <a lass="post-link" href="{{ post.url | prepend: site.url }}">
+        <a lass="post-link" href="{{ post.url | prepend: site .url }}.html">
           <img width="300" height="300" src="{{ site.url }}{{ post.thumbnail }}" class="attachment-post-thumbnail wp-post-image" alt="{{ post.title }}">
           <div class="box-hover"></div>
         </a>

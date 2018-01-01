@@ -28,12 +28,13 @@ layout: default
     <br class="clearfix" />
     {{ content }}
 
-    <br class="clearfix" />
-
-
     <ul class="menu" id="controls">
-      <li><a href="{{ page.previous.url | prepend: site.url }}.html"><div class='prev-arrow'></div></a></li>
-      <li><a href="{{ page.next.url | prepend: site.url }}.html"><div class='next-arrow'></div></a></li>
+      {% if page.previous.url %}
+        <li><a href="{{ page.previous.url | prepend: site.url }}.html"><div class='prev-arrow'></div></a></li>
+      {% endif %}
+      {% if page.next.url %}
+        <li><a href="{{ page.next.url | prepend: site.url }}.html"><div class='next-arrow'></div></a></li>
+      {% endif %}
     </ul>
 
     <div class="sharing">

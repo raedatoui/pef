@@ -474,9 +474,10 @@ span.view-large {
 .narrow-col {
     padding: 20px;
     background: #FFF;
-    float: right;
+    float: left;
     clear: right;
     width: 300px;
+    margin-left: 20px;
 }
 
 #footer {
