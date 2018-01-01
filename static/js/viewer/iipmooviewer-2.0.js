@@ -1279,7 +1279,7 @@ var IIPMooViewer = new Class({
 
 			// Create our buttons as SVG with fallback to PNG
 			//** no, just PNG
-			var prefix = this.server+'/static/images/iip/';
+			var prefix = this.server+'static/images/iip/';
 			['reset','zoomIn','zoomOut'].each( function(k){
 				new Element('img',{
 					'src': prefix + k + '.png',

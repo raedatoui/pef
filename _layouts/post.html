@@ -4,7 +4,7 @@ layout: default
 <script type="text/javascript">
   iip_enabled = 1;
   var images = "static/iip/{{ page.iip_path }}/";
-  var navImage = "{{ page.iip_thumb}}";
+  var navImage = "{{ site.url }}{{ page.iip_thumb}}";
   var credit = "{{ page.iip_credit }}";
   var imgW = "{{ page.iip_width }}";
   var imgH = "{{ page.iip_height }}";
@@ -12,11 +12,14 @@ layout: default
 
 <div id="page">
   <div class="wide-col" style="width: {{ page.iip_left_col }}">
-    <p><img class="alignnone size-full" style="width: {{ page.iip_left_col }}"
-    src="{{ page.iip_image }}" alt="{{ page.title }}"></p>
+    <img class="alignnone size-full" style="width: {{ page.iip_left_col }}"
+    src="{{ site.url }}{{ page.iip_image }}" alt="{{ page.title }}">
     <div class="box-hover">
         <div class="hover-bg"></div>
-        <div class="instr"></div>
+        <div class="instr">
+          <span>CLICK TO VIEW</span>
+          <img src="https://storage.googleapis.com/pierreemmanuelfillet.com/static/images/zoom-in.png" />
+        </div>
     </div>
   </div>
 
@@ -26,24 +29,24 @@ layout: default
     {{ content }}
 
     <br class="clearfix" />
-    <br class="clearfix" />
+
 
     <ul class="menu" id="controls">
-      <li><a href="/"><div class='prev-arrow'></div></a></li>
-      <li><a href="/"><div class='next-arrow'></div></a></li>
+      <li><a href="{{ page.previous.url | prepend: site.url }}.html"><div class='prev-arrow'></div></a></li>
+      <li><a href="{{ page.next.url | prepend: site.url }}.html"><div class='next-arrow'></div></a></li>
     </ul>
 
     <div class="sharing">
       <div class="fbLink"></div>
       <div class="twLink"></div>
     </div>
-
     <br class="clearfix" />
     <br class="clearfix" />
 
     <p>{% for category in page.categories %}
-      <a href="/{{ category}}">{{ category }}</a>
+      <!-- <a href="/{{ category}}">{{ category }}</a> -->
+      <span>{{ category }}</span>
     {% endfor %}
-    </p>
+    </p>    
   </div>
 </div>

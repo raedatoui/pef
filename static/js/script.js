@@ -29,22 +29,22 @@ jQuery.noConflict();
 		}
 	);
 
-	$('.wide-col .box-hover').height($('.wide-col img').height());
-	$('.wide-col .box-hover').width($('.wide-col img').width());
-	$('.wide-col .box-hover').css('margin-top', -$('.wide-col img').height());
+	// $('.wide-col .box-hover').height($('.wide-col img').height());
+	// $('.wide-col .box-hover').width($('.wide-col img').width());
+	// $('.wide-col .box-hover').css('margin-top', -$('.wide-col img').height());
 	// $('.wide-col .instr').css('top', ($('.wide-col img').height()-25)/2);
 	// $('.wide-col .instr').css('left', ($('.wide-col img').width()-25)/2);
 
 	if(iip_enabled == 1) {
 		$('.wide-col').hover(
 			function(){
-				$('.instr',this).show();
-				$('.box-hover',this).fadeTo("fast", 1).show();
+				// $('.instr',this).show();
+				// $('.box-hover',this).fadeTo("fast", 1).show();
 				$('.img', this).fadeTo("fast", 0.2).show();
 			},
 			function(){
-				$('.instr',this).hide();
-				$('.box-hover',this).fadeTo("fast", 0).hide();
+				// $('.instr',this).hide();
+				// $('.box-hover',this).fadeTo("fast", 0).hide();
 				$('.img',this).fadeTo("fast", 1);
 			}
 		);
@@ -53,7 +53,7 @@ jQuery.noConflict();
 	$('.wide-col').click(function(event){
 		event.preventDefault();
 		if(iip_enabled == 1) {
-			var server = 'http://50.116.51.173/';
+			var server = 'https://storage.googleapis.com/pierreemmanuelfillet.com/';
 			showViewer();
 			var iipmooviewer = new IIPMooViewer( "iipContainer", {
 				image: images,
@@ -97,7 +97,7 @@ jQuery.noConflict();
 		var left = parseInt((screen.availWidth/2) - (width/2));
 		var top = parseInt((screen.availHeight/2) - (height/2));
 		var windowFeatures = "width=" + width + ",height=" + height + ",status,resizable,left=" + left + ",top=" + top + "screenX=" + left + ",screenY=" + top;
-		var fbLink = "http://www.facebook.com/sharer.php?u=http://raedatoui.com/";
+		var fbLink = "http://www.facebook.com/sharer.php?u=https://storage.googleapis.com/pierreemmanuelfillet.com";
 		window.open(fbLink, "myWindow", windowFeatures);
 	});
 
@@ -106,7 +106,7 @@ jQuery.noConflict();
 		var w = 500;
 		var h = 300;
 		var hashtags = "pierreemmanuelfillet"
-		var url = "https://twitter.com/share?url=http://raedatoui.com/" +
+		var url = "https://twitter.com/share?url=https://storage.googleapis.com/pierreemmanuelfillet.com" +
 					"&hashtags=" + hashtags +
 					"&text=" + $("meta[property='og:title']").attr('content')
 		LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
